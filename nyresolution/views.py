@@ -32,7 +32,7 @@ def user(request):
         email = f['email'].value() 
 
         tmp = User.objects.filter(email=email)
-        if tmp.count() > 0 and int(user_id) == 0:
+        if tmp.count() > 0:
             return HttpResponse("Username already exist!")
 
         user = User.objects.create_user(
@@ -47,7 +47,8 @@ def user(request):
         profile.user_id = user.id
         profile.dob = f['dob'].value()
         profile.save();
-        return HttpResponse("User successfully created! Pls. login <a>href='login.html'</a>");
+        return redirect('successful');
+        #return HttpResponse("User successfully created! Pls. login <a>href='login.html'</a>");
         
     else:
         """
@@ -99,3 +100,7 @@ def entries(request):
 def delgoal(request, goal_id):
     Goal.objects.filter(id = goal_id).delete()
     return redirect('entries')
+
+
+def successful(request):
+    return render(request, 'nyresolution/successful.html')

@@ -1,0 +1,4 @@
+1) Webpage gateway http://[host]/nyresolution/
+2) http://[host]/nyresolution/entries/ -> list of current user new years resolution
+3) http://[host]/nyresolution/user/ -> new user registration
+4) http://[host]/nyresolution/goal/[id] -> add/edit of user new years resolution
