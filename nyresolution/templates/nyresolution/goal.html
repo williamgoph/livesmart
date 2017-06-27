@@ -1,0 +1,24 @@
+
+<li><a href='../../logout'>logout</a></li>
+
+<form action='.' method='post'>
+    {% csrf_token %}
+
+    {% if not goal.id == None %}
+        <input type='hidden' name='id' value='{{goal.id}}' />
+    {% else %}
+        <input type='hidden' name='id' value='0' />
+
+    {% endif %}
+
+    <div>
+    <label>What is your goal for this year?</label>
+    <textarea cols='70' rows='3' name='entry' id='id_entry'>{% if not goal.entry == None %}{{goal.entry}}{% endif %}</textarea>
+    </div>
+
+    <div>
+    <input type='submit' value='submit' />
+    </div>
+
+</form>
+

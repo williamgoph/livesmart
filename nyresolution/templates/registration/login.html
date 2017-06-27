@@ -1,0 +1,18 @@
+
+<html>
+    <body>
+        <h1>New Years Resolution Tracker</h1>
+
+        <li><a href='../user'>Register</a></li>
+        
+        <li><a href='../entries'>My List of New Years Resolutions</a></li> 
+
+ 
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<li><a href='../logout'>logout</a></li>
+<li>hi&nbsp{{user.first_name}}&nbsp{{user.last_name}}, here are are the list of your new years resolutions..</li>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Goal</th>
+        <th>Date/Time Entered</th>
+ 
+        <th>&nbsp</th>
+        <th>&nbsp</th>
+        
+    </tr>
+
+
+    <tr>
+{% for entry in entries %}
+    <tr>
+        <td>{{entry.id}}</td>
+        <td>{{entry.entry}}</td>
+        <td>{{entry.created}}</td>
+
+        <td><a href='../goal/{{entry.id}}'>edit</a></td>
+        <td><a href='../delgoal/{{entry.id}}'>delete</a></td>
+    </tr>
+{% endfor %}
+
+    <tr><td colspan='5'><a href='../goal/0'>add a resolution</a></td></tr>
+
+    </tr>
+
+</table>
